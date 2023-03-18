@@ -9,4 +9,7 @@ public:
         return eat;
     }
     virtual void isDie(){}
+    virtual ~Ant()
+    {
+    }
 };
