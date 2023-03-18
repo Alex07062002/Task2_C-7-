@@ -47,20 +47,25 @@ void burnOfPest(int num,std::vector<Pest*> pests)
     }
 }
 
-    int main(){
+   int main(){
     int day = 0;
-        int numOfPest,numOfWomb,numOfSoldier,numOfPoliceman,numOfWorker;
+        int numOfPest,numOfSoldier,numOfPoliceman,numOfWorker;
+    double wareHouse,startEat;
+    do
+    {
+        std::cout<<"Count eat blocks in  anthill warehouse:\n";
+        std::cin>>wareHouse;
+    }while (wareHouse<0);
+    do
+    {
+        std::cout<<"Start count of eat:\n";
+        std::cin>>startEat;
+    }while (startEat<0);
     do
     {
         std::cout<<"Num of pests:\n";
         std::cin>>numOfPest;
     }while (numOfPest<0);
-        do
-        {
-            std::cout<<"Num of womb:\n";
-            std::cin>>numOfWomb; 
-        }
-        while (numOfWomb != 1);
     do
     {
         std::wcout<<"Num of soldiers:\n";
@@ -76,7 +81,7 @@ void burnOfPest(int num,std::vector<Pest*> pests)
         std::wcout<<"Num of workers:\n";
         std::wcin>>numOfWorker;
     }while (numOfWorker<0);
-        Anthill* anthill = new Anthill(100000, 20,numOfSoldier,numOfPoliceman,numOfWorker);
+        Anthill* anthill = new Anthill(wareHouse, startEat,numOfSoldier,numOfPoliceman,numOfWorker);
         std::vector<Pest*> pests = std::vector<Pest*>();
         for (int i =0; i< numOfPest; i++)
         {
